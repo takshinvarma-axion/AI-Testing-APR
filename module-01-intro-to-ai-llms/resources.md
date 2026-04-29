@@ -11,10 +11,14 @@
 - "Language Models are Few-Shot Learners" (GPT-3) — https://arxiv.org/abs/2005.14165
 - "BERT: Pre-training of Deep Bidirectional Transformers" — https://arxiv.org/abs/1810.04805
 
-## Interactive / visual
-- **OpenAI Tokenizer** — https://platform.openai.com/tokenizer *(used in Day 2)*
-- Embedding Projector (TensorFlow) — https://projector.tensorflow.org
-- Transformer Explainer — https://poloclub.github.io/transformer-explainer/
+## Interactive / visual *(all used in Day 2 browser demos)*
+- **bbycroft LLM (3D GPT walkthrough)** — https://bbycroft.net/llm
+- **TensorFlow Playground** — https://playground.tensorflow.org
+- **tiktokenizer** (multi-model tokenizer) — https://tiktokenizer.vercel.app
+- **OpenAI Tokenizer** — https://platform.openai.com/tokenizer
+- **Embedding Projector** (TensorFlow) — https://projector.tensorflow.org
+- **Transformer Explainer** (GPT-2 in browser) — https://poloclub.github.io/transformer-explainer/
+- Adam Harley's MNIST CNN visualizer — https://adamharley.com/nn_vis/
 - Anthropic "Primer on Probabilities & LLMs" — https://docs.anthropic.com
 
 ## Tokenization deep dives

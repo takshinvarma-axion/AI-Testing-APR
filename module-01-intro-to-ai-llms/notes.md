@@ -191,6 +191,41 @@ PROVIDER=openai python examples/day3_next_token_probs.py
 
 ---
 
+## Plain-English glossary — AI explained like you're new to it
+
+If any of the terms below felt dense in class, here they are explained without jargon. Use this as a quick-reference. Not every phrase has to click on the first pass — the technical meaning matters; the analogy is a handrail.
+
+| Term | Technical definition | Think of it like… |
+|---|---|---|
+| **Parameter / weight** | A single learned number that stores part of a pattern. | A tiny fact the model learned. "When I see X, lean slightly toward Y." Billions of those, stacked. |
+| **Neuron** | A unit that takes several inputs, multiplies each by a weight, adds them up, adds a bias, and applies an activation function. | A person in a small room. Voices shout through the door (inputs). They trust some voices more than others (weights). They have their own mood (bias). They decide whether to speak or stay quiet based on how interesting the total is (activation). |
+| **Weight** | The importance the neuron assigns to one input. | How much the person in the room trusts that particular voice. |
+| **Bias** | A per-neuron offset added before the activation. | The person's default mood. Even with total silence, they might be leaning one way. |
+| **Activation function** | A non-linear function applied after the weighted sum (ReLU, Tanh, GELU, etc.). | The speak-or-stay-quiet threshold. Without it, the whole network is a megaphone that just amplifies — no actual thinking. |
+| **Layer** | A set of neurons that all receive the same inputs from the previous layer. | A station on an assembly line. Does one transformation, passes the result to the next station. |
+| **Deep learning** | A neural network with many layers. | A long assembly line — 50+ stations — where each one does something simple and the whole line learns to do something complex. |
+| **Training** | Repeatedly adjusting the weights to reduce the model's error on examples. | Learning darts blindfolded. Throw, hear "too left," adjust, throw again. Millions of throws. |
+| **Loss function** | A single number measuring how wrong the model was. Training minimizes it. | A scorecard. Lower number = fewer mistakes. The whole goal is to get this number down. |
+| **Gradient descent** | The method for figuring out which way to nudge each weight to reduce the loss. | Standing on a hillside in the fog, feeling which direction is downhill, and stepping that way. Step by step until you hit bottom. |
+| **Token** | A unit of text the model actually sees — usually a subword, sometimes a single character. | A LEGO brick. The model builds all its understanding from these bricks. Words like "hello" are often one brick. Weird words like "antidisestablishmentarianism" get chopped into several. |
+| **Tokenizer** | The tool that splits text into tokens before the model sees it. | The factory that turns your text into LEGO bricks before the model touches them. |
+| **Embedding** | A vector of numbers representing a token's meaning. | A home address on a giant map of meaning. Similar words live in the same neighbourhood. |
+| **Vector space** | The high-dimensional space where embeddings live. | The map itself. Instead of 2D like a city, it has hundreds or thousands of dimensions. |
+| **Self-attention** | The mechanism by which a transformer weighs every token against every other token when processing text. | A student highlighting the words in a paragraph that matter most to the question. The model does this for every word, all at once. |
+| **Transformer** | The neural network architecture behind every modern LLM. | A specific kind of assembly line that uses self-attention at every station. Introduced in 2017. |
+| **Context window** | The maximum number of tokens the model can process at once. | The model's short-term memory. Anything that falls off the edge is gone — the model never saw it. |
+| **Next-token prediction** | The core operation of an LLM — predict the next token given what came before. | Phone-keyboard autocomplete on steroids. But instead of suggesting 3 words, it suggests a probability for every word it knows. |
+| **Temperature** | A sampling parameter that controls randomness. Low = safe, high = creative. | A creativity knob on a jukebox. 0 = plays the #1 hit every time. 1 = mixes in some B-sides. 2 = plays weird remixes, sometimes invented on the spot. |
+| **Greedy sampling** | Always pick the most-likely next token. | A jukebox that only plays the top-charted song. Repetitive. Safe. |
+| **Top-K / Top-P** | Restrict the sampling pool to the top K tokens, or the smallest group whose probabilities sum to P. | Asking the jukebox to pick from the top 10 hits, or enough songs to cover 90% of listener preference. |
+| **Hallucination** | The model confidently generates plausible-sounding but false output. | A confident 7-year-old in a trivia quiz. Doesn't know the answer, doesn't want to say "I don't know," so invents something that sounds right. |
+| **Bias** (fairness sense) | Systematic unfairness in model outputs, inherited from training data. | A kid raised on a single source of opinions. They'll repeat those opinions without knowing they're biased — that's all they heard. |
+| **Non-determinism** | Same input, different output, run to run. | A jazz musician. Same song, different improvisation every time. Traditional software is a music box — crank the handle, same tune. LLMs are jazz. |
+| **RAG (Retrieval-Augmented Generation)** | Technique where the model looks up relevant documents before answering. | Giving a student an open-book test. Same student, but now they can cite sources. |
+| **Agent** | An LLM that can call external tools (APIs, functions) and take multi-step actions. | An LLM with hands. Instead of just talking, it can run a calculator, check a calendar, or send an email. |
+
+---
+
 ## Module 1 → Module 2 bridge
 
 You now know what an LLM is, how it generates text, and why it fails. Module 2 shifts gears — you'll learn the Python, pytest, and automation skills you'll use to actually *test* these systems.
